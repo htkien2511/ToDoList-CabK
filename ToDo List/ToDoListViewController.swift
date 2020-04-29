@@ -57,3 +57,19 @@ extension ToDoListViewController: UITableViewDataSource {
 extension ToDoListViewController: UITableViewDelegate {
   
 }
+
+extension ToDoListViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "addTask" {
+      guard let destinationVC = segue.destination as? AddTaskViewController else { return }
+      destinationVC.delegate = self
+    }
+  }
+}
+
+extension ToDoListViewController: AddTask {
+  func addTask(task: String) {
+    tasks.append(task)
+    tableView.reloadData()
+  }
+}

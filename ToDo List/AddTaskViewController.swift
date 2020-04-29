@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol AddTask {
+  func addTask(task: String)
+}
+
 class AddTaskViewController: UIViewController {
   
   @IBOutlet weak var containerAddTaskView: UIView!
   @IBOutlet weak var nameTextView: UITextView!
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var addTaskButton: UIButton!
+  
+  var delegate: AddTask?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -31,5 +38,7 @@ class AddTaskViewController: UIViewController {
     addTaskButton.shadow()
   }
   @IBAction func addTaskTapped(_ sender: UIButton) {
+    delegate?.addTask(task: nameTextView.text!)
+    dismiss(animated: true, completion: nil)
   }
 }
