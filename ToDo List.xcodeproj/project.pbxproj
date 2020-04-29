@@ -19,6 +19,7 @@
 		7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D5752458080B0077B831 /* AddTaskViewController.swift */; };
 		7BC3D579245809680077B831 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D578245809680077B831 /* Helper.swift */; };
 		7BF284C22459A8CD007CE04B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF284C12459A8CD007CE04B /* Task.swift */; };
+		7BF284CB2459C6AF007CE04B /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF284CA2459C6AF007CE04B /* TaskData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7BC3D5752458080B0077B831 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		7BC3D578245809680077B831 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		7BF284C12459A8CD007CE04B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		7BF284CA2459C6AF007CE04B /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,19 +70,14 @@
 		7BC3D5372457C9F30077B831 /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
-				7BC3D5772458090E0077B831 /* Utilities */,
 				7BC3D5382457C9F40077B831 /* AppDelegate.swift */,
-				7BC3D53A2457C9F40077B831 /* SceneDelegate.swift */,
-				7BF284C12459A8CD007CE04B /* Task.swift */,
-				7BC3D53C2457C9F40077B831 /* ToDoListViewController.swift */,
-				7BC3D53E2457C9F40077B831 /* Main.storyboard */,
-				7BC3D5442457C9F40077B831 /* Assets.xcassets */,
-				7BC3D5462457C9F40077B831 /* LaunchScreen.storyboard */,
+				7BF284CE2459C6E0007CE04B /* Controllers */,
 				7BC3D5492457C9F40077B831 /* Info.plist */,
-				7BC3D5412457C9F40077B831 /* ToDo_List.xcdatamodeld */,
-				7BC3D54F2457CF310077B831 /* ToDoListCell.swift */,
-				7BC3D5502457CF310077B831 /* ToDoListCell.xib */,
-				7BC3D5752458080B0077B831 /* AddTaskViewController.swift */,
+				7BF284CC2459C6C9007CE04B /* Model */,
+				7BF284CF2459C6F6007CE04B /* Resources */,
+				7BC3D53A2457C9F40077B831 /* SceneDelegate.swift */,
+				7BC3D5772458090E0077B831 /* Utilities */,
+				7BF284CD2459C6DB007CE04B /* View */,
 			);
 			path = "ToDo List";
 			sourceTree = "<group>";
@@ -91,6 +88,44 @@
 				7BC3D578245809680077B831 /* Helper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7BF284CC2459C6C9007CE04B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BF284C12459A8CD007CE04B /* Task.swift */,
+				7BF284CA2459C6AF007CE04B /* TaskData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7BF284CD2459C6DB007CE04B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BC3D53E2457C9F40077B831 /* Main.storyboard */,
+				7BC3D5462457C9F40077B831 /* LaunchScreen.storyboard */,
+				7BC3D5502457CF310077B831 /* ToDoListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7BF284CE2459C6E0007CE04B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7BC3D53C2457C9F40077B831 /* ToDoListViewController.swift */,
+				7BC3D5752458080B0077B831 /* AddTaskViewController.swift */,
+				7BC3D54F2457CF310077B831 /* ToDoListCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7BF284CF2459C6F6007CE04B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BC3D5442457C9F40077B831 /* Assets.xcassets */,
+				7BC3D5412457C9F40077B831 /* ToDo_List.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +205,7 @@
 				7BC3D579245809680077B831 /* Helper.swift in Sources */,
 				7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */,
 				7BC3D5392457C9F40077B831 /* AppDelegate.swift in Sources */,
+				7BF284CB2459C6AF007CE04B /* TaskData.swift in Sources */,
 				7BC3D53B2457C9F40077B831 /* SceneDelegate.swift in Sources */,
 				7BC3D5512457CF310077B831 /* ToDoListCell.swift in Sources */,
 				7BC3D5432457C9F40077B831 /* ToDo_List.xcdatamodeld in Sources */,
