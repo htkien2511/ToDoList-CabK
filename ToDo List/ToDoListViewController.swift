@@ -13,14 +13,16 @@ class ToDoListViewController: UIViewController {
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var tableView: UITableView!
   
-  var tasks = ["Buy new sweatshirt", "Begin promotion phase", "Read an article"]
+  var tasks: [Task] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setUpElements()
     setUpCells()
-    
+    tasks.append(Task(name: "Buy new sweatshirt", description: "Description1"))
+    tasks.append(Task(name: "Begin promotion phase", description: "Description2"))
+    tasks.append(Task(name: "Read an article", description: "Description3"))
     tableView.dataSource = self
   }
   
@@ -48,7 +50,15 @@ extension ToDoListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListCell", for: indexPath) as! ToDoListCell
-    cell.taskLabel.text = tasks[indexPath.row]
+    cell.taskLabel.text = tasks[indexPath.row].name
+    if tasks[indexPath.row].isDone {
+        cell.checkedButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+    } else {
+        cell.checkedButton.setImage(#imageLiteral(resourceName: "unchecked"), for: .normal)
+    }
+    cell.delegate = self
+    cell.indexP = indexPath.row
+    cell.tasks = tasks
     return cell
   }
   
@@ -67,9 +77,14 @@ extension ToDoListViewController {
   }
 }
 
-extension ToDoListViewController: AddTask {
+extension ToDoListViewController: AddTask, ChangeButton {
+  func changeButton(isDone: Bool, indexP: Int) {
+    tasks[indexP].isDone = isDone
+    tableView.reloadData()
+  }
+  
   func addTask(task: String) {
-    tasks.append(task)
+    tasks.append(Task(name: task, description: "None"))
     tableView.reloadData()
   }
 }

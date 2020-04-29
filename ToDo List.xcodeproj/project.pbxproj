@@ -18,6 +18,7 @@
 		7BC3D5522457CF310077B831 /* ToDoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BC3D5502457CF310077B831 /* ToDoListCell.xib */; };
 		7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D5752458080B0077B831 /* AddTaskViewController.swift */; };
 		7BC3D579245809680077B831 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D578245809680077B831 /* Helper.swift */; };
+		7BF284C22459A8CD007CE04B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF284C12459A8CD007CE04B /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7BC3D5502457CF310077B831 /* ToDoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoListCell.xib; sourceTree = "<group>"; };
 		7BC3D5752458080B0077B831 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		7BC3D578245809680077B831 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		7BF284C12459A8CD007CE04B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				7BC3D5772458090E0077B831 /* Utilities */,
 				7BC3D5382457C9F40077B831 /* AppDelegate.swift */,
 				7BC3D53A2457C9F40077B831 /* SceneDelegate.swift */,
+				7BF284C12459A8CD007CE04B /* Task.swift */,
 				7BC3D53C2457C9F40077B831 /* ToDoListViewController.swift */,
 				7BC3D53E2457C9F40077B831 /* Main.storyboard */,
 				7BC3D5442457C9F40077B831 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF284C22459A8CD007CE04B /* Task.swift in Sources */,
 				7BC3D53D2457C9F40077B831 /* ToDoListViewController.swift in Sources */,
 				7BC3D579245809680077B831 /* Helper.swift in Sources */,
 				7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */,

@@ -8,11 +8,19 @@
 
 import UIKit
 
+protocol ChangeButton {
+  func changeButton(isDone: Bool, indexP: Int)
+}
+
 class ToDoListCell: UITableViewCell {
   
   @IBOutlet weak var containerCell: UIView!
   @IBOutlet weak var taskLabel: UILabel!
   @IBOutlet weak var checkedButton: UIButton!
+  
+  var delegate: ChangeButton?
+  var indexP: Int?
+  var tasks: [Task]?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -37,5 +45,10 @@ class ToDoListCell: UITableViewCell {
   
   
   @IBAction func checkedTapped(_ sender: UIButton) {
+    if tasks![indexP!].isDone {
+      delegate?.changeButton(isDone: false, indexP: indexP!)
+    } else {
+      delegate?.changeButton(isDone: true, indexP: indexP!)
+    }
   }
 }
