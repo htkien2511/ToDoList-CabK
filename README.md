@@ -5,7 +5,7 @@
 
 ## Getting Started
 
-![alt text](https://github.com/htkien2511/ToDoList-CabK/blob/master/tableview.png)
+![alt text](https://github.com/htkien2511/ToDoList-CabK/blob/master/tableview.png =300x)
 
 
 ## Authors
