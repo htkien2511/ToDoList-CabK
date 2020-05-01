@@ -13,16 +13,16 @@ class ToDoListViewController: UIViewController {
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var tableView: UITableView!
   
-  var tasks: [Task] = []
+  var tasks: [Quest] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setUpElements()
     setUpCells()
-    tasks.append(Task(name: "Buy new sweatshirt", description: "Description1"))
-    tasks.append(Task(name: "Begin promotion phase", description: "Description2"))
-    tasks.append(Task(name: "Read an article", description: "Description3"))
+    tasks.append(Quest(name: "Buy new sweatshirt", description: "Description1"))
+    tasks.append(Quest(name: "Begin promotion phase", description: "Description2"))
+    tasks.append(Quest(name: "Read an article", description: "Description3"))
     tableView.dataSource = self
   }
   
@@ -84,7 +84,7 @@ extension ToDoListViewController: AddTask, ChangeButton {
   }
   
   func addTask(task: String) {
-    tasks.append(Task(name: task, description: "None"))
+    tasks.append(Quest(name: task, description: "None"))
     tableView.reloadData()
   }
 }

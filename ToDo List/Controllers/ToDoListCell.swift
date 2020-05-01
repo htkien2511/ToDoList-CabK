@@ -20,7 +20,7 @@ class ToDoListCell: UITableViewCell {
   
   var delegate: ChangeButton?
   var indexP: Int?
-  var tasks: [Task]?
+  var tasks: [Quest]?
   
   override func awakeFromNib() {
     super.awakeFromNib()

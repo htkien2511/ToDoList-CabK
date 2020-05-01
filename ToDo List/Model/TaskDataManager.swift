@@ -10,6 +10,17 @@ import UIKit
 import CoreData
 
 class TaskDataManager {
+  
+  static let sharedManager = TaskDataManager()
+  lazy var persistentContainer: NSPersistentContainer = {
+    let container = NSPersistentContainer(name: "ToDo_List")
+    container.loadPersistentStores { (storeDescription, error) in
+      if let error = error as NSError? {
+        fatalError("Unresolved error \(error), \(error.userInfo)")
+      }
+    }
+    return container
+  }()
   var tasks: [NSManagedObject] = []
   
   func fetchData() {
