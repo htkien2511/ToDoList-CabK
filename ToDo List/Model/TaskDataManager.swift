@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TaskData {
+class TaskDataManager {
   var tasks: [NSManagedObject] = []
   
   func fetchData() {
