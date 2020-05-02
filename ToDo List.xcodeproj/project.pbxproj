@@ -19,7 +19,6 @@
 		7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D5752458080B0077B831 /* AddTaskViewController.swift */; };
 		7BC3D579245809680077B831 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D578245809680077B831 /* Helper.swift */; };
 		7BC4A6EA245C367900175B17 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4A6E9245C367900175B17 /* ToDoListTests.swift */; };
-		7BF284C22459A8CD007CE04B /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF284C12459A8CD007CE04B /* Quest.swift */; };
 		7BF284CB2459C6AF007CE04B /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF284CA2459C6AF007CE04B /* TaskDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		7BC4A6E7245C367900175B17 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC4A6E9245C367900175B17 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
 		7BC4A6EB245C367900175B17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7BF284C12459A8CD007CE04B /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		7BF284CA2459C6AF007CE04B /* TaskDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,7 +123,6 @@
 		7BF284CC2459C6C9007CE04B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7BF284C12459A8CD007CE04B /* Quest.swift */,
 				7BF284CA2459C6AF007CE04B /* TaskDataManager.swift */,
 			);
 			path = Model;
@@ -262,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BF284C22459A8CD007CE04B /* Quest.swift in Sources */,
 				7BC3D53D2457C9F40077B831 /* ToDoListViewController.swift in Sources */,
 				7BC3D579245809680077B831 /* Helper.swift in Sources */,
 				7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */,

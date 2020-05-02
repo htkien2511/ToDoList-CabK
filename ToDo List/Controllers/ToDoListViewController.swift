@@ -72,14 +72,6 @@ extension ToDoListViewController: UITableViewDataSource {
     } else {
       cell.checkedButton.setImage(#imageLiteral(resourceName: "unchecked"), for: .normal)
     }
-//    if tasks[indexPath.row].isDone {
-//        cell.checkedButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-//    } else {
-//        cell.checkedButton.setImage(#imageLiteral(resourceName: "unchecked"), for: .normal)
-//    }
-//    cell.delegate = self
-//    cell.indexP = indexPath.row
-//    cell.tasks = tasks
     return cell
   }
   
@@ -89,23 +81,11 @@ extension ToDoListViewController: UITableViewDelegate {
   
 }
 
-//extension ToDoListViewController {
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if segue.identifier == "addTask" {
-//      guard let destinationVC = segue.destination as? AddTaskViewController else { return }
-//      destinationVC.delegate = self
-//    }
-//  }
-//}
-//
-//extension ToDoListViewController: AddTask, ChangeButton {
-//  func changeButton(isDone: Bool, indexP: Int) {
-//    tasks[indexP].isDone = isDone
-//    tableView.reloadData()
-//  }
-//  
-//  func addTask(task: String) {
-//    tasks.append(Quest(name: task, description: "None"))
-//    tableView.reloadData()
-//  }
-//}
+extension ToDoListViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "addTask" {
+      guard let destinationVC = segue.destination as? AddTaskViewController else { return }
+      
+    }
+  }
+}

@@ -8,19 +8,12 @@
 
 import UIKit
 
-protocol ChangeButton {
-  func changeButton(isDone: Bool, indexP: Int)
-}
-
 class ToDoListCell: UITableViewCell {
   
   @IBOutlet weak var containerCell: UIView!
   @IBOutlet weak var taskLabel: UILabel!
   @IBOutlet weak var checkedButton: UIButton!
   
-  var delegate: ChangeButton?
-  var indexP: Int?
-  var tasks: [Quest]?
   var task: Task?
   
   override func awakeFromNib() {
