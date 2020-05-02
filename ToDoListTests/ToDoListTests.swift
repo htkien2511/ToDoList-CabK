@@ -70,6 +70,7 @@ class ToDoListTests: XCTestCase {
     print("begin")
     for task in tasks! {
       print(task.name)
+      print(task.detail)
     }
     print("end")
     //XCTAssertEqual(tasks?.count, 3)
