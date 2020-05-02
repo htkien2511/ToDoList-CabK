@@ -105,4 +105,9 @@ class ToDoListTests: XCTestCase {
     XCTAssertEqual(firstUpdatedTask.date!, newDate)
     XCTAssertEqual(firstUpdatedTask.isDone, isDone)
   }
+  
+  func test_flushData() {
+    taskDataManager.flushData()
+    XCTAssertEqual(taskDataManager.fetchAllTasks()?.count, 0)
+  }
 }
