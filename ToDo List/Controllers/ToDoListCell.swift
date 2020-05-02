@@ -21,6 +21,7 @@ class ToDoListCell: UITableViewCell {
   var delegate: ChangeButton?
   var indexP: Int?
   var tasks: [Quest]?
+  var task: Task?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -45,10 +46,12 @@ class ToDoListCell: UITableViewCell {
   
   
   @IBAction func checkedTapped(_ sender: UIButton) {
-    if tasks![indexP!].isDone {
-      delegate?.changeButton(isDone: false, indexP: indexP!)
-    } else {
-      delegate?.changeButton(isDone: true, indexP: indexP!)
-    }
+    guard let name = task?.name,
+      let detail = task?.detail,
+      let date = task?.date,
+      let isDone = task?.isDone else { return }
+    TaskDataManager.sharedManager.update(name: name, detail: detail, isDone: !isDone, date: date, task: task!)
+    // Incomplete
+    print("toggle button at \(name)")
   }
 }

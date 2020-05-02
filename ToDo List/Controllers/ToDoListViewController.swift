@@ -55,13 +55,23 @@ class ToDoListViewController: UIViewController {
 }
 
 extension ToDoListViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView,
+                 numberOfRowsInSection section: Int) -> Int {
     return tasks.count
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListCell", for: indexPath) as! ToDoListCell
-    cell.taskLabel.text = tasks[indexPath.row].value(forKeyPath: "name") as? String
+  func tableView(_ tableView: UITableView,
+                 cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let task = tasks[indexPath.row]
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListCell",
+                                             for: indexPath) as! ToDoListCell
+    cell.taskLabel.text = task.value(forKeyPath: "name") as? String
+    cell.task = task as? Task
+    if task.value(forKeyPath: "isDone") as! Bool {
+      cell.checkedButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+    } else {
+      cell.checkedButton.setImage(#imageLiteral(resourceName: "unchecked"), for: .normal)
+    }
 //    if tasks[indexPath.row].isDone {
 //        cell.checkedButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
 //    } else {
