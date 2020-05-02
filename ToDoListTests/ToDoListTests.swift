@@ -65,5 +65,25 @@ class ToDoListTests: XCTestCase {
     return formatter.date(from: "2020/05/02 09:30")!
   }
   
+  func test_fetch_all_task() {
+    let tasks = taskDataManager.fetchAllTasks()
+    print("begin")
+    for task in tasks! {
+      print(task.name)
+    }
+    print("end")
+    //XCTAssertEqual(tasks?.count, 3)
+  }
+  
+  func test_remove_task() {
+    let tasks = taskDataManager.fetchAllTasks()
+    let numberOfTasks = tasks?.count
+    
+    let task = tasks![0]
+    taskDataManager.delete(task: task)
+    
+    XCTAssertEqual(taskDataManager.fetchAllTasks()?.count, numberOfTasks! - 1)
+  }
+  
   
 }
