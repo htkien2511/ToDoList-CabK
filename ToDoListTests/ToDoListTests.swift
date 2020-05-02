@@ -69,8 +69,9 @@ class ToDoListTests: XCTestCase {
     let tasks = taskDataManager.fetchAllTasks()
     print("begin")
     for task in tasks! {
-      print(task.name)
-      print(task.detail)
+      print(task.name!)
+      print(task.detail!)
+      print(task.date!)
     }
     print("end")
     //XCTAssertEqual(tasks?.count, 3)
