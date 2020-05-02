@@ -41,5 +41,29 @@ class ToDoListTests: XCTestCase {
     XCTAssertNotNil(coreDataStack)
   }
   
+  func test_create_task() {
+    let name1 = "Task 1"
+    let detail1 = "Detail 1"
+    let isDone1 = false
+    let date1 = myDate()
+    
+    let task1 = taskDataManager.insertTask(name: name1, detail: detail1, isDone: isDone1, date: date1)
+    XCTAssertNotNil(task1)
+    
+    let name2 = "Task 2"
+    let detail2 = "Detail 2"
+    let isDone2 = false
+    let date2 = myDate()
+    
+    let task2 = taskDataManager.insertTask(name: name2, detail: detail2, isDone: isDone2, date: date2)
+    XCTAssertNotNil(task2)
+  }
+  
+  func myDate() -> Date {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy/MM/dd HH:mm"
+    return formatter.date(from: "2020/05/02 09:30")!
+  }
+  
   
 }
