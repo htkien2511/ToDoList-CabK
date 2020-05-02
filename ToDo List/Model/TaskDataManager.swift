@@ -23,6 +23,25 @@ class TaskDataManager {
   }()
   var tasks: [NSManagedObject] = []
   
+  func insertTask(name: String, detail: String, isDone: Bool, date: Date) -> Task? {
+    let managedContext = TaskDataManager.sharedManager.persistentContainer.viewContext
+    let entity = NSEntityDescription.entity(forEntityName: "Task", in: managedContext)!
+    let task = NSManagedObject(entity: entity, insertInto: managedContext)
+    
+    task.setValue(name, forKeyPath: "name")
+    task.setValue(detail, forKeyPath: "detail")
+    task.setValue(isDone, forKeyPath: "isDone")
+    task.setValue(date, forKeyPath: "date")
+    
+    do {
+      try managedContext.save()
+      return task as? Task
+    } catch let error as NSError {
+      print("Could not save. \(error), \(error.userInfo)")
+      return nil
+    }
+  }
+  
   func fetchData() {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
     
