@@ -7,19 +7,16 @@
 //
 
 import UIKit
-
-protocol AddTask {
-  func addTask(task: String)
-}
+import CoreData
 
 class AddTaskViewController: UIViewController {
   
   @IBOutlet weak var containerAddTaskView: UIView!
   @IBOutlet weak var nameTextView: UITextView!
   @IBOutlet weak var descriptionTextView: UITextView!
+  @IBOutlet weak var datePicker: UIDatePicker!
   @IBOutlet weak var addTaskButton: UIButton!
   
-  var delegate: AddTask?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,7 +35,14 @@ class AddTaskViewController: UIViewController {
     addTaskButton.shadow()
   }
   @IBAction func addTaskTapped(_ sender: UIButton) {
-    delegate?.addTask(task: nameTextView.text!)
-    dismiss(animated: true, completion: nil)
-  }
+    guard let name = nameTextView.text,
+      let detail = descriptionTextView.text else { return }
+    // test date => this is incomplete
+    let date = datePicker.date
+    let task = TaskDataManager.sharedManager.insertTask(name: name, detail: detail, isDone: false, date: date)
+    if task != nil {
+      dismiss(animated: true, completion: nil)
+    }
+  } 
+  
 }

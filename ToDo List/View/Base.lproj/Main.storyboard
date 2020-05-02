@@ -179,6 +179,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="XO2-xt-WoG"/>
                                         </constraints>
+                                        <locale key="locale" localeIdentifier="en_SG"/>
                                     </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,6 +227,7 @@
                     <connections>
                         <outlet property="addTaskButton" destination="wkf-0s-BLM" id="hKD-rk-OYE"/>
                         <outlet property="containerAddTaskView" destination="O56-Z5-YHz" id="nEq-iN-KLb"/>
+                        <outlet property="datePicker" destination="L8m-Jg-gdO" id="2kb-Gw-nL1"/>
                         <outlet property="descriptionTextView" destination="jd1-7h-ate" id="IX5-l2-6js"/>
                         <outlet property="nameTextView" destination="9LB-vb-rwr" id="bjq-yR-0pq"/>
                     </connections>
