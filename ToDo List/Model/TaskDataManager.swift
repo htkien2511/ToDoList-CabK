@@ -64,6 +64,20 @@ class TaskDataManager {
     }
   }
   
+  func update(name: String, detail: String, isDone: Bool, date: Date, task: Task) {
+    let managedContext = TaskDataManager.sharedManager.persistentContainer.viewContext
+    task.setValue(name, forKey: "name")
+    task.setValue(detail, forKey: "detail")
+    task.setValue(isDone, forKey: "isDone")
+    task.setValue(date, forKey: "date")
+    
+    do {
+      try managedContext.save()
+    } catch let error as NSError {
+      print("Could not update. \(error), \(error.userInfo)")
+    }
+  }
+  
   func fetchData() {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
     
