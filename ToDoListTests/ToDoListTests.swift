@@ -85,5 +85,23 @@ class ToDoListTests: XCTestCase {
     XCTAssertEqual(taskDataManager.fetchAllTasks()?.count, numberOfTasks! - 1)
   }
   
-  
+  func test_update_task() {
+    let tasks = taskDataManager.fetchAllTasks()
+    //update first task
+    let firstTask = tasks![0]
+    let newName = "New name"
+    let newDetail = "New detail"
+    let newDate = myDate()
+    let isDone = false
+    
+    TaskDataManager.sharedManager.update(name: newName, detail: newDetail, isDone: isDone, date: newDate, task: firstTask)
+    
+    let updatedTasks = taskDataManager.fetchAllTasks()
+    let firstUpdatedTask = updatedTasks![0]
+    
+    XCTAssertEqual(firstUpdatedTask.name!, newName)
+    XCTAssertEqual(firstUpdatedTask.detail!, newDetail)
+    XCTAssertEqual(firstUpdatedTask.date!, newDate)
+    XCTAssertEqual(firstUpdatedTask.isDone, isDone)
+  }
 }
