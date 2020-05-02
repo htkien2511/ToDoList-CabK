@@ -77,5 +77,23 @@ class TaskDataManager {
       print("Could not update. \(error), \(error.userInfo)")
     }
   }
+  
+  func flushData() {
+    let managedContext = TaskDataManager.sharedManager.persistentContainer.viewContext
+    let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
+    do {
+      let tasks = try managedContext.fetch(fetchRequest)
+      for task in tasks {
+        managedContext.delete(task)
+      }
+    } catch let error as NSError {
+      print("Could not fetch data to flush. \(error), \(error.userInfo)")
+    }
+    do {
+      try managedContext.save()
+    } catch let error as NSError {
+      print("Could not flush data. \(error), \(error.userInfo)")
+    }
+  }
 }
 
