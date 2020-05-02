@@ -54,6 +54,16 @@ class TaskDataManager {
     }
   }
   
+  func delete(task: Task) {
+    let managedContext = TaskDataManager.sharedManager.persistentContainer.viewContext
+    do {
+      managedContext.delete(task)
+      try managedContext.save()
+    } catch let error as NSError {
+      print("Could not delete. \(error), \(error.userInfo)")
+    }
+  }
+  
   func fetchData() {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
     
