@@ -42,6 +42,18 @@ class TaskDataManager {
     }
   }
   
+  func fetchAllTasks() -> [Task]? {
+    let managedContext = TaskDataManager.sharedManager.persistentContainer.viewContext
+    let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
+    do {
+      let tasks = try managedContext.fetch(fetchRequest)
+      return tasks as? [Task]
+    } catch let error as NSError {
+      print("Could not fetch. \(error), \(error.userInfo)")
+      return nil
+    }
+  }
+  
   func fetchData() {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
     
