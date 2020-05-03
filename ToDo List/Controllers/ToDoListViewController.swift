@@ -23,6 +23,7 @@ class ToDoListViewController: UIViewController {
     setUpCells()
     
     tableView.dataSource = self
+    tableView.delegate = self
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -79,14 +80,18 @@ extension ToDoListViewController: UITableViewDataSource {
 }
 
 extension ToDoListViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let task = tasks[indexPath.row]
+    performSegue(withIdentifier: "detailTask", sender: task)
+  }
 }
 
 extension ToDoListViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "addTask" {
-      guard let destinationVC = segue.destination as? AddTaskViewController else { return }
-      
+    if segue.identifier == "detailTask" {
+      guard let destinationVC = segue.destination as? DetailTaskViewController else { return }
+      guard let task = sender as? Task else { return }
+      destinationVC.currentTask = task
     }
   }
 }
