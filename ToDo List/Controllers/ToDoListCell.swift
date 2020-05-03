@@ -48,7 +48,11 @@ class ToDoListCell: UITableViewCell {
       let detail = task?.detail,
       let date = task?.date,
       let isDone = task?.isDone else { return }
-    TaskDataManager.sharedManager.update(name: name, detail: detail, isDone: !isDone, date: date, task: task!)
-    delegate?.toogleButton()
+    let successToggle = TaskDataManager.sharedManager.update(name: name, detail: detail, isDone: !isDone, date: date, task: task!)
+    if successToggle {
+      delegate?.toogleButton()
+    } else {
+      // show alert
+    }    
   }
 }

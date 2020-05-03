@@ -64,7 +64,7 @@ class TaskDataManager {
     }
   }
   
-  func update(name: String, detail: String, isDone: Bool, date: Date, task: Task) {
+  func update(name: String, detail: String, isDone: Bool, date: Date, task: Task) -> Bool {
     let managedContext = TaskDataManager.sharedManager.persistentContainer.viewContext
     task.setValue(name, forKey: "name")
     task.setValue(detail, forKey: "detail")
@@ -73,8 +73,10 @@ class TaskDataManager {
     
     do {
       try managedContext.save()
+      return true
     } catch let error as NSError {
       print("Could not update. \(error), \(error.userInfo)")
+      return false
     }
   }
   
