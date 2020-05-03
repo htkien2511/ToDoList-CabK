@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ToogleButton {
+  func toogleButton()
+}
+
 class ToDoListCell: UITableViewCell {
   
   @IBOutlet weak var containerCell: UIView!
@@ -15,6 +19,7 @@ class ToDoListCell: UITableViewCell {
   @IBOutlet weak var checkedButton: UIButton!
   
   var task: Task?
+  var delegate: ToogleButton?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -44,7 +49,6 @@ class ToDoListCell: UITableViewCell {
       let date = task?.date,
       let isDone = task?.isDone else { return }
     TaskDataManager.sharedManager.update(name: name, detail: detail, isDone: !isDone, date: date, task: task!)
-    // Incomplete
-    print("toggle button at \(name)")
+    delegate?.toogleButton()
   }
 }

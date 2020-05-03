@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class ToDoListViewController: UIViewController {
-
+  
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var tableView: UITableView!
   
@@ -21,7 +21,7 @@ class ToDoListViewController: UIViewController {
     
     setUpElements()
     setUpCells()
-
+    
     tableView.dataSource = self
   }
   
@@ -72,6 +72,7 @@ extension ToDoListViewController: UITableViewDataSource {
     } else {
       cell.checkedButton.setImage(#imageLiteral(resourceName: "unchecked"), for: .normal)
     }
+    cell.delegate = self
     return cell
   }
   
@@ -87,5 +88,11 @@ extension ToDoListViewController {
       guard let destinationVC = segue.destination as? AddTaskViewController else { return }
       
     }
+  }
+}
+
+extension ToDoListViewController: ToogleButton {
+  func toogleButton() {
+    tableView.reloadData()
   }
 }
