@@ -15,6 +15,7 @@ class AddTaskViewController: UIViewController {
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var datePicker: UIDatePicker!
   @IBOutlet weak var addTaskButton: UIButton!
+  @IBOutlet weak var cancelButton: UIButton!
   
   
   override func viewDidLoad() {
@@ -32,6 +33,8 @@ class AddTaskViewController: UIViewController {
     descriptionTextView.shadow()
     addTaskButton.corner()
     addTaskButton.shadow()
+    cancelButton.corner()
+    cancelButton.shadow()
   }
   @IBAction func addTaskTapped(_ sender: UIButton) {
     guard let name = nameTextView.text,
@@ -42,5 +45,8 @@ class AddTaskViewController: UIViewController {
       dismiss(animated: true, completion: nil)
     }
   } 
+  @IBAction func cancelTapped(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
   
 }

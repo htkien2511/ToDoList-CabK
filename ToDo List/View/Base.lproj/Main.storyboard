@@ -156,17 +156,17 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-0s-BLM">
-                                        <rect key="frame" x="25" y="475.33333333333326" width="304" height="35"/>
+                                        <rect key="frame" x="25" y="475.33333333333326" width="144.33333333333334" height="35"/>
                                         <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="sEk-DY-kAH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="Create a task">
+                                        <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="addTaskTapped:" destination="U26-KB-rP5" eventType="touchUpInside" id="CPs-GI-JM6"/>
+                                            <action selector="cancelTapped:" destination="U26-KB-rP5" eventType="touchUpInside" id="sAc-LT-9MR"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzf-RN-1lT">
@@ -182,10 +182,26 @@
                                         </constraints>
                                         <locale key="locale" localeIdentifier="en_SG"/>
                                     </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VR-HI-Jji">
+                                        <rect key="frame" x="174.66666666666663" y="475.33333333333326" width="144.33333333333337" height="35"/>
+                                        <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4d0-fd-we5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Create a task">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addTaskTapped:" destination="U26-KB-rP5" eventType="touchUpInside" id="ttD-05-oPP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="5VR-HI-Jji" firstAttribute="trailing" secondItem="u2t-nh-HAd" secondAttribute="trailing" id="1oa-E0-OWX"/>
                                     <constraint firstItem="7ww-pj-uUR" firstAttribute="top" secondItem="9LB-vb-rwr" secondAttribute="bottom" constant="15" id="3by-Ox-1rG"/>
+                                    <constraint firstItem="5VR-HI-Jji" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wkf-0s-BLM" secondAttribute="trailing" constant="5" id="6AX-zI-fwH"/>
                                     <constraint firstItem="9LB-vb-rwr" firstAttribute="leading" secondItem="BUf-RS-vHJ" secondAttribute="leading" id="6KG-YR-UW3"/>
                                     <constraint firstItem="BUf-RS-vHJ" firstAttribute="top" secondItem="Y78-wq-y9m" secondAttribute="bottom" constant="20" id="6Sy-mo-4tG"/>
                                     <constraint firstItem="DaI-Jw-gtr" firstAttribute="trailing" secondItem="L8m-Jg-gdO" secondAttribute="trailing" id="73Y-fy-FOp"/>
@@ -193,10 +209,11 @@
                                     <constraint firstItem="L8m-Jg-gdO" firstAttribute="leading" secondItem="wzf-RN-1lT" secondAttribute="leading" id="AAF-VW-3pt"/>
                                     <constraint firstItem="DaI-Jw-gtr" firstAttribute="leading" secondItem="L8m-Jg-gdO" secondAttribute="leading" id="B7b-Ln-h9W"/>
                                     <constraint firstItem="wzf-RN-1lT" firstAttribute="leading" secondItem="7ww-pj-uUR" secondAttribute="leading" id="BrA-0L-bs2"/>
+                                    <constraint firstItem="wkf-0s-BLM" firstAttribute="width" secondItem="O56-Z5-YHz" secondAttribute="width" multiplier="0.45" constant="-15" id="F2G-XH-ayc"/>
                                     <constraint firstItem="9LB-vb-rwr" firstAttribute="top" secondItem="BUf-RS-vHJ" secondAttribute="bottom" constant="5" id="Hbw-Kg-haf"/>
                                     <constraint firstItem="jd1-7h-ate" firstAttribute="trailing" secondItem="7ww-pj-uUR" secondAttribute="trailing" id="K3U-MN-Gx8"/>
+                                    <constraint firstItem="5VR-HI-Jji" firstAttribute="width" secondItem="wkf-0s-BLM" secondAttribute="width" id="NPU-qW-hAw"/>
                                     <constraint firstItem="7ww-pj-uUR" firstAttribute="leading" secondItem="BUf-RS-vHJ" secondAttribute="leading" id="OSs-0t-9uG"/>
-                                    <constraint firstItem="wkf-0s-BLM" firstAttribute="trailing" secondItem="DaI-Jw-gtr" secondAttribute="trailing" id="OpV-wr-ytW"/>
                                     <constraint firstItem="jd1-7h-ate" firstAttribute="top" secondItem="7ww-pj-uUR" secondAttribute="bottom" constant="5" id="PI9-Kr-Pcn"/>
                                     <constraint firstItem="Y78-wq-y9m" firstAttribute="leading" secondItem="O56-Z5-YHz" secondAttribute="leading" constant="25" id="Pxh-Bd-BY9"/>
                                     <constraint firstItem="BUf-RS-vHJ" firstAttribute="trailing" secondItem="Y78-wq-y9m" secondAttribute="trailing" id="W56-6W-FnL"/>
@@ -209,6 +226,7 @@
                                     <constraint firstItem="Y78-wq-y9m" firstAttribute="top" secondItem="O56-Z5-YHz" secondAttribute="top" constant="25" id="gqa-e0-EQf"/>
                                     <constraint firstItem="wkf-0s-BLM" firstAttribute="leading" secondItem="DaI-Jw-gtr" secondAttribute="leading" id="gyP-5m-DRz"/>
                                     <constraint firstItem="9LB-vb-rwr" firstAttribute="trailing" secondItem="BUf-RS-vHJ" secondAttribute="trailing" id="i64-y6-tNx"/>
+                                    <constraint firstItem="5VR-HI-Jji" firstAttribute="centerY" secondItem="wkf-0s-BLM" secondAttribute="centerY" id="pRP-m1-JdB"/>
                                     <constraint firstItem="BUf-RS-vHJ" firstAttribute="leading" secondItem="Y78-wq-y9m" secondAttribute="leading" id="tNP-3O-S8n"/>
                                     <constraint firstAttribute="bottom" secondItem="wkf-0s-BLM" secondAttribute="bottom" constant="25" id="uRR-Eo-yf5"/>
                                     <constraint firstItem="wzf-RN-1lT" firstAttribute="trailing" secondItem="7ww-pj-uUR" secondAttribute="trailing" id="v0y-3F-uO6"/>
@@ -226,7 +244,8 @@
                         <viewLayoutGuide key="safeArea" id="NJu-vG-c49"/>
                     </view>
                     <connections>
-                        <outlet property="addTaskButton" destination="wkf-0s-BLM" id="hKD-rk-OYE"/>
+                        <outlet property="addTaskButton" destination="5VR-HI-Jji" id="Y2j-oe-odU"/>
+                        <outlet property="cancelButton" destination="wkf-0s-BLM" id="BHv-R2-nOY"/>
                         <outlet property="containerAddTaskView" destination="O56-Z5-YHz" id="nEq-iN-KLb"/>
                         <outlet property="datePicker" destination="L8m-Jg-gdO" id="2kb-Gw-nL1"/>
                         <outlet property="descriptionTextView" destination="jd1-7h-ate" id="IX5-l2-6js"/>
@@ -235,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GrS-49-vps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="-223"/>
+            <point key="canvasLocation" x="1086.9565217391305" y="-223.66071428571428"/>
         </scene>
         <!--Detail Task View Controller-->
         <scene sceneID="0hb-Mx-PUs">
