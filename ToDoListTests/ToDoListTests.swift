@@ -96,7 +96,7 @@ class ToDoListTests: XCTestCase {
     let newDate = myDate()
     let isDone = false
     
-    TaskDataManager.sharedManager.update(name: newName, detail: newDetail, isDone: isDone, date: newDate, task: firstTask)
+    XCTAssertTrue(TaskDataManager.sharedManager.update(name: newName, detail: newDetail, isDone: isDone, date: newDate, task: firstTask))
     
     let updatedTasks = taskDataManager.fetchAllTasks()
     let firstUpdatedTask = updatedTasks![0]
