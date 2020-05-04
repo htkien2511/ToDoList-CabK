@@ -29,7 +29,13 @@ class DetailTaskViewController: UIViewController {
   func setupData() {
     nameTextView.text = currentTask!.name
     detailTextView.text = currentTask!.detail
-    dateTextView.text = "\(currentTask!.date!)"
+    
+    // display date with style "MM,dd,yy, hh:mm a"
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .short
+    let date = formatter.string(from: currentTask!.date!)
+    dateTextView.text = "\(date)"
   }
   
   func setupElements() {
@@ -53,12 +59,15 @@ class DetailTaskViewController: UIViewController {
   @IBAction func saveButtonTapped(_ sender: Any) {
     let newName = nameTextView.text!
     let newDetail = detailTextView.text!
-    // date incomplete
-//    let formatter = DateFormatter()
-//    formatter.dateFormat = "yyyy/MM/dd HH:mm"
-//    let newDate = formatter.date(from: dateTextView.text!)!
+
+    // convert string of date To Date
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .short
+    let date = formatter.date(from: dateTextView.text)!
     let isDone = currentTask!.isDone
-    let successUpdate = TaskDataManager.sharedManager.update(name: newName, detail: newDetail, isDone: isDone, date: currentTask!.date!, task: currentTask!)
+    
+    let successUpdate = TaskDataManager.sharedManager.update(name: newName, detail: newDetail, isDone: isDone, date: date, task: currentTask!)
     if successUpdate {
       dismiss(animated: true, completion: nil)
     } else {

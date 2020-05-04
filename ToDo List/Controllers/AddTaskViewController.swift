@@ -36,7 +36,6 @@ class AddTaskViewController: UIViewController {
   @IBAction func addTaskTapped(_ sender: UIButton) {
     guard let name = nameTextView.text,
       let detail = descriptionTextView.text else { return }
-    // test date => this is incomplete
     let date = datePicker.date
     let task = TaskDataManager.sharedManager.insertTask(name: name, detail: detail, isDone: false, date: date)
     if task != nil {
