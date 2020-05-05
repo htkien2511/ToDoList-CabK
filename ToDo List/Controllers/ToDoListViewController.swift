@@ -77,6 +77,14 @@ extension ToDoListViewController: UITableViewDataSource {
     return cell
   }
   
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let task = tasks[indexPath.row] as! Task
+      TaskDataManager.sharedManager.delete(task: task)
+      tasks.remove(at: indexPath.row)
+      tableView.reloadData()
+    }
+  }
 }
 
 extension ToDoListViewController: UITableViewDelegate {
