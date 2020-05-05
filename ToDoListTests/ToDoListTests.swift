@@ -61,8 +61,8 @@ class ToDoListTests: XCTestCase {
   
   func myDate() -> Date {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy/MM/dd HH:mm"
-    return formatter.date(from: "2020/05/02 09:30")!
+    formatter.dateFormat = "MM,dd,yy, hh:mm a"
+    return formatter.date(from: "05/31/20, 09:30 AM")!
   }
   
   func test_fetch_all_task() {
