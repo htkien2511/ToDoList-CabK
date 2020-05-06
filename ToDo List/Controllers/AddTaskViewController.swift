@@ -22,6 +22,13 @@ class AddTaskViewController: UIViewController {
     super.viewDidLoad()
     
     setUpElements()
+    
+    let viewIsTap = UITapGestureRecognizer(target: self, action: #selector(viewIsTapped))
+    view.addGestureRecognizer(viewIsTap)
+  }
+  
+  @objc func viewIsTapped() {
+    view.endEditing(true)
   }
   
   func setUpElements() {

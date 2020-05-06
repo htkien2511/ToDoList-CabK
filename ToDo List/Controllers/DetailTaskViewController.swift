@@ -24,6 +24,13 @@ class DetailTaskViewController: UIViewController {
     
     setupData()
     setupElements()
+    
+    let viewIsTap = UITapGestureRecognizer(target: self, action: #selector(viewIsTapped))
+    view.addGestureRecognizer(viewIsTap)
+  }
+  
+  @objc func viewIsTapped() {
+    view.endEditing(true)
   }
   
   func setupData() {
