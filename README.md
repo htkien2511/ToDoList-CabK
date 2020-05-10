@@ -14,9 +14,11 @@ Màn hình thêm 1 task:
 <img src="https://github.com/htkien2511/ToDoList-CabK/blob/master/image/addview.png" alt="alt text" width="300" >
 
 Màn hình cập nhật 1 task:
-<img src="https://github.com/htkien2511/ToDoList-CabK/blob/master/image/updateview.png" alt="alt text" width="300" >
+
+<img src="https://github.com/htkien2511/ToDoList-CabK/blob/master/image/updateView.png" alt="alt text" width="300" >
 
 Màn hình xoá 1 task:
+
 <img src="https://github.com/htkien2511/ToDoList-CabK/blob/master/image/deleteTask.png" alt="alt text" width="300" >
 
 ## Authors
