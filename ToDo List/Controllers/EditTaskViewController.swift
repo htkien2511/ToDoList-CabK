@@ -71,14 +71,24 @@ class EditTaskViewController: UIViewController {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .short
-    let date = formatter.date(from: dateTextView.text)!
+    let date = formatter.date(from: dateTextView.text)
+    guard let safeDate = date else {
+      showAlert(message: "Wrong date")
+      return
+    }
     let isDone = currentTask!.isDone
     
-    let successUpdate = TaskDataManager.sharedManager.update(name: newName, detail: newDetail, isDone: isDone, date: date, task: currentTask!)
+    let successUpdate = TaskDataManager.sharedManager.update(name: newName, detail: newDetail, isDone: isDone, date: safeDate, task: currentTask!)
     if successUpdate {
       dismiss(animated: true, completion: nil)
     } else {
       // show alert
     }
+  }
+  
+  func showAlert(message: String) {
+    let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    self.present(alert, animated: true, completion: nil)
   }
 }
