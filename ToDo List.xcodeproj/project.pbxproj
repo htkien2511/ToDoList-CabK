@@ -19,7 +19,7 @@
 		7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D5752458080B0077B831 /* AddTaskViewController.swift */; };
 		7BC3D579245809680077B831 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3D578245809680077B831 /* Helper.swift */; };
 		7BC4A6EA245C367900175B17 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4A6E9245C367900175B17 /* ToDoListTests.swift */; };
-		7BC4A6F2245ED59F00175B17 /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4A6F1245ED59F00175B17 /* DetailTaskViewController.swift */; };
+		7BC4A6F2245ED59F00175B17 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4A6F1245ED59F00175B17 /* EditTaskViewController.swift */; };
 		7BF284CB2459C6AF007CE04B /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF284CA2459C6AF007CE04B /* TaskDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		7BC4A6E7245C367900175B17 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC4A6E9245C367900175B17 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
 		7BC4A6EB245C367900175B17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7BC4A6F1245ED59F00175B17 /* DetailTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
+		7BC4A6F1245ED59F00175B17 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		7BF284CA2459C6AF007CE04B /* TaskDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 				7BC3D53C2457C9F40077B831 /* ToDoListViewController.swift */,
 				7BC3D5752458080B0077B831 /* AddTaskViewController.swift */,
 				7BC3D54F2457CF310077B831 /* ToDoListCell.swift */,
-				7BC4A6F1245ED59F00175B17 /* DetailTaskViewController.swift */,
+				7BC4A6F1245ED59F00175B17 /* EditTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC3D53D2457C9F40077B831 /* ToDoListViewController.swift in Sources */,
-				7BC4A6F2245ED59F00175B17 /* DetailTaskViewController.swift in Sources */,
+				7BC4A6F2245ED59F00175B17 /* EditTaskViewController.swift in Sources */,
 				7BC3D579245809680077B831 /* Helper.swift in Sources */,
 				7BC3D5762458080B0077B831 /* AddTaskViewController.swift in Sources */,
 				7BC3D5392457C9F40077B831 /* AppDelegate.swift in Sources */,

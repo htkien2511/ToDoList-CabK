@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailTaskViewController: UIViewController {
+class EditTaskViewController: UIViewController {
   
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var nameTextView: UITextView!

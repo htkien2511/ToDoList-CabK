@@ -103,7 +103,7 @@ extension ToDoListViewController: UITableViewDelegate {
 extension ToDoListViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "detailTask" {
-      guard let destinationVC = segue.destination as? DetailTaskViewController else { return }
+      guard let destinationVC = segue.destination as? EditTaskViewController else { return }
       guard let task = sender as? Task else { return }
       destinationVC.currentTask = task
     }
