@@ -84,6 +84,20 @@ extension ToDoListViewController: UITableViewDelegate {
     let task = tasks[indexPath.row]
     performSegue(withIdentifier: "detailTask", sender: task)
   }
+  
+  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, nil) in
+      let task = self.tasks[indexPath.row] as! Task
+      TaskDataManager.sharedManager.delete(task: task)
+      self.tasks.remove(at: indexPath.row)
+      tableView.reloadData()
+    }
+    delete.backgroundColor = #colorLiteral(red: 0.2039215686, green: 0.5960784314, blue: 0.8588235294, alpha: 1)
+    delete.image = #imageLiteral(resourceName: "trash")
+    let config = UISwipeActionsConfiguration(actions: [delete])
+    config.performsFirstActionWithFullSwipe = false
+    return config
+  }
 }
 
 extension ToDoListViewController {
